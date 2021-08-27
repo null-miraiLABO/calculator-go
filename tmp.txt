@@ -1,0 +1,19 @@
+/*
+func plus(x, y int) int {
+	return x + y
+}
+
+func minus(x, y int) int {
+	return x - y
+}
+
+func multiply(x, y int) int {
+	return x * y
+}
+
+func divideFloat(x, y int) float64 {
+	xf := float64(x)
+	yf := float64(y)
+	return xf / yf
+}
+*/
