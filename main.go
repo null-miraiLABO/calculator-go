@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var cv int
+	var total int
 	limit := 10
 	formula := make([]string, limit)
 
@@ -19,30 +19,27 @@ func main() {
 
 	fmt.Println(formula)
 
+	tmp, _ := strconv.Atoi(formula[0])
+	total = tmp
+
 	for i := 0; i < len(formula); i++ {
-		tmp := 0
 
 		switch formula[i] {
-		case "*":
-			fmt.Println("*")
-		case "/":
-			fmt.Println("/")
 		case "+":
-			fmt.Println("+")
+			tmp, _ = strconv.Atoi(formula[i+1])
+			total = total + tmp
 		case "-":
-			//fmt.Println(minus(formula[i-1],formula[i+1]))
-		default:
-			tmp, _ = strconv.Atoi(formula[i])
-			cv += tmp
+			tmp, _ = strconv.Atoi(formula[i+1])
+			total = total - tmp
+		case "*":
+			tmp, _ = strconv.Atoi(formula[i+1])
+			total = total * tmp
+		case "/":
+			tmp, _ = strconv.Atoi(formula[i+1])
+			total = total / tmp
 		}
 
 	}
 
-	fmt.Println(cv)
+	fmt.Printf("= %d \n", total)
 }
-
-/*
-func minus(x, y int) int {
-	return x - y
-}
-*/
